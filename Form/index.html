@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu đăng ký</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: auto;
+        }
+
+        .content {
+            width: 60%;
+            height: 100%;
+            margin: auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+        <table border="0" cellpadding="0" cellspacing="0" class="container">
+            <tr>
+                <td style="background-image: url(/images/logo_bg.gif); width: 70%;">
+                    <img src="/images/lachong.gif" alt="lachong">
+                </td>
+                <td style="width: 30%;">
+                    <img src="/images/Flash.gif" alt="Flash">
+                    <img src="/images/dreamweaver.gif" alt="dreamweaver">
+                    <img src="/images/adobe.gif" alt="adobe">
+                </td>
+            </tr>
+        </table>
+        <hr width="500px" size="5px" color="red">
+        <h1 style="text-transform: uppercase; color: black;text-align: center;">phiếu đăng ký</h1>
+        <form name="PhieuDangKy" action="" method="post" enctype="multipart/form-data" class="content">
+            <table border="0" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td>
+                        <label for="">Họ và tên:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="hoten" id="hoten" size=30 maxlength=30 placeholder="Nhập họ tên">(*)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Địa chỉ:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="diachi" id="diachi" size=50 maxlength=40 placeholder="Nhập địa chỉ">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Email:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="email" id="email" size=30 maxlength=30 placeholder="Nhập Email">(*)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Giới tính:</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="r1" id="r1" value="1">
+                        <label for="r1">Nam</label>
+
+                        <input type="radio" name="r1" id="r2" value="2">
+                        <label for="r2">Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tuoi">Tuổi:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="tuoi" id="tuoi" size=8 maxlength=8 placeholder="Số tuổi">(*)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Sở thích:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="option1" id="option1" value="1">
+                        <label for="option1">Thể thao</label>
+                        <br>
+                        <!-- có thể dùng 1 thẻ div chung rồi dùng style -->
+                        <input type="checkbox" name="option2" id="option2" value="2">
+                        <label for="option2">Văn học</label>
+                        <br>
+                        <input type="checkbox" name="option3" id="option3" value="3">
+                        <label for="option3">Công nghệ thông tin</label>
+                        <br>
+                        <input type="checkbox" name="option4" id="option4" value="4">
+                        <label for="option4">Lịch sử</label>
+                        <br>
+                        <input type="checkbox" name="option5" id="option5" value="5">
+                        <label for="option5">Game</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Chuyên ngành:</label>
+                    </td>
+                    <td>
+                        <select name="cboChuyenNganh" id="cboChuyenNganh">
+                            <option value="1">Khoa học máy tính</option>
+                            <option value="2">Kỹ thuật máy tính</option>
+                            <option value="3" selected>Công nghệ Web</option>
+                            <option value="4">Trí tuệ nhân tạo và Robotics</option>
+                            <option value="5">Mạng máy tính và truyền thông dữ liệu</option>
+                            <option value="6">An toàn thông tin</option>
+                            <option value="7">Hệ thống quản lý thông tin</option>
+                            <option value="8">Big Data và Machine Learning</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Gởi hình:</label>
+                    </td>
+                    <td>
+                        <input type="file" name="fileUpload" id="fileUpload">
+                        <!-- <input type="file" name="fileUpload" id="fileUpload" style="display: none;"> -->
+                        <!-- <input type="button" value="Browse..." id="submit_image_button" onclick="document.getElementById('fileUpload').click();"> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Yêu cầu:</label>
+                    </td>
+                    <td>
+                        <textarea name="noidung" id="noidung" cols="32" rows="5" placeholder="Nhập nội dung"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <input type="submit" name="btnSend" value="Gởi thông tin"> <input type="reset" name="btnReset"
+                            value="Nhập lại">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </table>
+
+</body>
+
+</html>

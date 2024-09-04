@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6 - Làm quen với CSS</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <h1>Danh sách Sinh viên</h1>
+    <table class="table-danhsachsinhvien" border="1" style="border-collapse: collapse;" cellpadding="3" cellspacing="3">
+        <tr style="text-align: center;">
+            <th>STT</th>
+            <th>MSSV</th>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Điểm LT</th>
+            <th>Điểm TH</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>NT001</th>
+            <th>Nguyễn Văn A</th>
+            <th>11/06/1989</th>
+            <th>8</th>
+            <th>8</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>NT002</th>
+            <th>Trần Văn B</th>
+            <th>05/02/1987</th>
+            <th>4</th>
+            <th>9</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>NT003</th>
+            <th>Nguyễn Thị C</th>
+            <th>25/01/1993</th>
+            <th>9</th>
+            <th>4</th>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>NT004</th>
+            <th>Dương Trung D</th>
+            <th>15/04/1993</th>
+            <th>10</th>
+            <th>5</th>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th>NT005</th>
+            <th>Nguyễn Bé E</th>
+            <th>07/06/1983</th>
+            <th>6</th>
+            <th>7</th>
+        </tr>
+    </table>
+    <hr>
+    <h1>Phân biệt :nth-child và :nth-of-type</h1>
+    <div class="vidu">
+        <h3>Tiêu đề</h3>
+        <p>Nguyễn Văn A</p>
+        <span>Hello, tôi là nội dung thẻ span</span>
+        <p>Nguyễn Thị Bé Yêu</p>
+    </div>
+    <hr>
+    <h1>Định dạng CSS PSEUDO áp dụng trong FORM</h1>
+    <table border="0">
+        <tr>
+            <td><label for="">Email đăng nhập:</label></td>
+            <td class="form-dangnhap"><input type="text" name="Email" id="Email" size="20" maxlength="20"
+                    placeholder="Nhập email" class="control" required></td>
+        </tr>
+        <tr>
+            <td><label for="">Mật khẩu:</label></td>
+            <td class="form-dangnhap"><input type="text" name="Pwd" id="Pwd" size="20" maxlength="20"
+                    placeholder="Nhập mật khẩu" class="control" required></td>
+        </tr>
+        <tr>
+            <td><label for="">Email đăng nhập:</label></td>
+            <td class="form-dangnhap"><input type="text" name="HoTen" id="HoTen" size="20" maxlength="20"
+                    placeholder="Nhập họ tên"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Đăng nhập">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

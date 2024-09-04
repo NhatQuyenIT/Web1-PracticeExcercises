@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xuất số nguyên tố từ 1 đến n</title>
+    <script>
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function xuatSoNT_theoycdb() {
+            var n = parseInt(document.getElementById("number").value);
+
+            if (!isNaN(n) && n >= 1) {
+                var resultString = "Các số nguyên tố từ 1 đến " + n + " là: ";
+
+                for (var i = 2; i <= n; i++) {
+                    if (isPrime(i)) {
+                        resultString += i + ', ';
+                    }
+                }
+
+                // Loại bỏ dấu phẩy và khoảng trắng cuối cùng
+                resultString = resultString.slice(0, -2);
+
+                document.getElementById("result").innerHTML = resultString;
+            } else {
+                alert("Vui lòng nhập số nguyên dương!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Xuất số nguyên tố từ 1 đến n</h2>
+
+    <label for="number">Nhập số nguyên dương n:</label>
+    <input type="text" id="number">
+    <br>
+    <button onclick="xuatSoNT_theoycdb()">Xuất số nguyên tố</button>
+    <div id="result"></div>
+</body>
+</html>

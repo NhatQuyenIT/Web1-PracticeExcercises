@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố, số chính phương, số hoàn hảo</title>
+    <script>
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function ktSoChinhPhuong(number) {
+            var soChinhPhuong = Math.sqrt(number);
+            return soChinhPhuong === Math.floor(soChinhPhuong);
+        }
+
+        function ktSoHoanHao(number) {
+            if (number <= 1) {
+                return false;
+            }
+            var sum = 1; // 1 is always a divisor
+            for (var i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    sum += i;
+                    if (i !== number / i) {
+                        sum += number / i;
+                    }
+                }
+            }
+            return sum === number;
+        }
+
+        function checkNumber() {
+            var n = parseInt(document.getElementById("number").value);
+
+            if (!isNaN(n)) {
+                var primeResult = isPrime(n) ? "là số nguyên tố" : "không là số nguyên tố";
+                var squareResult = ktSoChinhPhuong(n) ? "là số chính phương" : "không là số chính phương";
+                var perfectResult = ktSoHoanHao(n) ? "là số hoàn hảo" : "không là số hoàn hảo";
+
+                document.getElementById("result").innerHTML = "Số " + n + " " + primeResult + ", " + squareResult + ", " + perfectResult + ".";
+            } else {
+                alert("Vui lòng nhập số nguyên!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Kiểm tra số nguyên tố, số chính phương, số hoàn hảo</h2>
+
+    <label for="number">Nhập số nguyên:</label>
+    <input type="text" id="number">
+    <br>
+    <button onclick="checkNumber()">Kiểm tra</button>
+    <div id="result"></div>
+</body>
+</html>

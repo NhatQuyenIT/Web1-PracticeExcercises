@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích  các hình học</title>
+    <script>
+        function tinhChuViHinhTron(bankinhR){
+            return Math.PI*Math.pow(bankinhR,2);
+        }
+        function tinhDienTichHinhTron(bankinhR){
+            return 2*Math.PI*bankinhR;
+        }
+        function HinhTron() {
+    var bankinhR = document.getElementById("bankinhR").value;
+    bankinhR = bankinhR.replace(",", ".");
+    
+    console.log("Bán kính sau khi xử lý:", bankinhR); // Debug line
+    
+    var radius = parseFloat(bankinhR);
+
+    console.log("Bán kính sau khi chuyển đổi:", radius); // Debug line
+    
+    if (!isNaN(radius) && radius > 0) {
+        document.getElementById("KQ2").innerHTML = "Chu vi (P): " + tinhChuViHinhTron(radius).toFixed(2) + "<br>Diện tích (S): " + tinhDienTichHinhTron(radius).toFixed(2);
+    } else {
+        alert("Vui lòng nhập bán kính hợp lệ!");
+    }
+}
+    </script>
+</head>
+<body>
+    <h2>Tính diện tích và chu vi các hình học</h2>
+
+    <hr>
+<h3>Hình Tròn</h3>
+<label for="bankinhR">Bán kính:</label>
+<input type="text" id="bankinhR">
+<button onclick="HinhTron()">Tính</button>
+<div id="KQ2"></div>
+
+</body>
+</html>

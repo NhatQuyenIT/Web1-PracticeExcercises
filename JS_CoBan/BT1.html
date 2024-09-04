@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích các hình học</title>
+    <script>
+        function tinhChuViHinhVuong(canh) {
+            return 4 * canh;
+        }
+        function tinhDienTichHinhVuong(canh) {
+            return Math.pow(canh, 2);
+        }
+        function HinhVuong() {
+            var canh = parseFloat(document.getElementById("canhhinhvuong").value);
+
+            if (!isNaN(canh) && canh > 0) {
+                document.getElementById("KQ1").innerHTML = "Chu vi (P): " + tinhChuViHinhVuong(canh).toFixed(2) + "<br>Diện tích (S): " + tinhDienTichHinhVuong(canh).toFixed(2);
+            } else {
+                alert("Vui lòng nhập chiều dài cạnh hợp lệ!");
+            }
+        }
+
+        function tinhChuViHinhTron(bankinhR) {
+            return Math.PI * Math.pow(bankinhR, 2);
+        }
+        function tinhDienTichHinhTron(bankinhR) {
+            return 2 * Math.PI * bankinhR;
+        }
+        function HinhTron() {
+            var bankinhR = parseFloat(document.getElementById("bankinhR").value); //*** 4,7 và 4.7 ra kết quả khác nhau!
+
+            if (!isNaN(bankinhR) && bankinhR > 0) {
+                document.getElementById("KQ2").innerHTML = "Chu vi (P): " + tinhChuViHinhTron(bankinhR).toFixed(2) + "<br>Diện tích (S): " + tinhDienTichHinhTron(bankinhR).toFixed(2);
+            } else {
+                alert("Vui lòng nhập chiều dài cạnh hợp lệ!");
+            }
+        }
+
+        function tinhChuViTamGiac(canh_a, canh_b, canh_c) {
+            return canh_a + canh_b + canh_c;
+        }
+        function tinhDienTichTamGiac(canh_a, canh_b, canh_c) {
+            p = tinhChuViTamGiac(canh_a, canh_b, canh_c) / 2;
+            return Math.sqrt(p * (p - canh_a) * (p - canh_b) * (p - canh_c));
+        }
+        function TamGiac() {
+            var canh_a = parseFloat(document.getElementById("canh_a").value);
+            var canh_b = parseFloat(document.getElementById("canh_b").value);
+            var canh_c = parseFloat(document.getElementById("canh_c").value);
+
+            if (!isNaN(canh_a) && !isNaN(canh_b) && !isNaN(canh_c) && canh_a > 0 && canh_b > 0 && canh_c > 0) {
+                document.getElementById("KQ3").innerHTML = "Chu vi (P): " + tinhChuViTamGiac(canh_a, canh_b, canh_c).toFixed(2) + "<br>Diện tích (S):" + tinhDienTichTamGiac(canh_a, canh_b, canh_c).toFixed(2);
+            } else {
+                alert("Vui lòng nhập độ dài các cạnh hợp lệ!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Tính diện tích và chu vi các hình học</h2>
+
+    <h3>Hình vuông</h3>
+    <label for="canhhinhvuong">Chiều dài cạnh:</label>
+    <input type="text" id="canhhinhvuong">
+    <button onclick="HinhVuong()">Tính</button>
+    <div id="KQ1"></div>
+
+    <hr>
+    <h3>Hình Tròn</h3>
+    <label for="bankinhR">Bán kính:</label>
+    <input type="text" id="bankinhR">
+    <button onclick="HinhTron()">Tính</button>
+    <div id="KQ2"></div>
+
+    <hr>
+    <h3>Tam giác</h3>
+    <label for="canh_a">Cạnh 1:</label>
+    <input type="text" id="canh_a">
+    <label for="canh_b">Cạnh 2:</label>
+    <input type="text" id="canh_b">
+    <label for="canh_c">Cạnh 3:</label>
+    <input type="text" id="canh_c">
+    <button onclick="TamGiac()">Tính</button>
+    <div id="KQ3"></div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi và diện tích các hình học</title>
+    <script>
+        function tinhChuViHinhVuong(canh) {
+            return 4 * canh;
+        }
+        function tinhDienTichHinhVuong(canh) {
+            return Math.pow(canh, 2);
+        }
+        function HinhVuong() {
+            var canh = parseFloat(document.forms["myForm"]["canhhinhvuong"].value);
+
+            if (!isNaN(canh) && canh > 0) {
+                document.getElementById("KQ1").innerHTML = "Chu vi (P): " + tinhChuViHinhVuong(canh).toFixed(2) + "<br>Diện tích (S): " + tinhDienTichHinhVuong(canh).toFixed(2);
+            } else {
+                alert("Vui lòng nhập chiều dài cạnh hợp lệ!");
+            }
+        }
+
+        function tinhChuViHinhTron(bankinhR) {
+            return Math.PI * Math.pow(bankinhR, 2);
+        }
+        function tinhDienTichHinhTron(bankinhR) {
+            return 2 * Math.PI * bankinhR;
+        }
+        function HinhTron() {
+            var bankinhR = parseFloat(document.forms["myForm"]["bankinhR"].value);
+
+            if (!isNaN(bankinhR) && bankinhR > 0) {
+                document.getElementById("KQ2").innerHTML = "Chu vi (P): " + tinhChuViHinhTron(bankinhR).toFixed(2) + "<br>Diện tích (S): " + tinhDienTichHinhTron(bankinhR).toFixed(2);
+            } else {
+                alert("Vui lòng nhập chiều dài cạnh hợp lệ!");
+            }
+        }
+
+        function tinhChuViTamGiac(canh_a, canh_b, canh_c) {
+            return canh_a + canh_b + canh_c;
+        }
+        function tinhDienTichTamGiac(canh_a, canh_b, canh_c) {
+            p = tinhChuViTamGiac(canh_a, canh_b, canh_c) / 2;
+            return Math.sqrt(p * (p - canh_a) * (p - canh_b) * (p - canh_c));
+        }
+        function TamGiac() {
+            var canh_a = parseFloat(document.forms["myForm"]["canh_a"].value);
+            var canh_b = parseFloat(document.forms["myForm"]["canh_b"].value);
+            var canh_c = parseFloat(document.forms["myForm"]["canh_c"].value);
+
+            if (!isNaN(canh_a) && !isNaN(canh_b) && !isNaN(canh_c) && canh_a > 0 && canh_b > 0 && canh_c > 0) {
+                document.getElementById("KQ3").innerHTML = "Chu vi (P): " + tinhChuViTamGiac(canh_a, canh_b, canh_c).toFixed(2) + "<br>Diện tích (S):" + tinhDienTichTamGiac(canh_a, canh_b, canh_c).toFixed(2);
+            } else {
+                alert("Vui lòng nhập độ dài các cạnh hợp lệ!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Tính diện tích và chu vi các hình học</h2>
+
+    <h3>Hình vuông</h3>
+    <form name="myForm">
+        <label for="canhhinhvuong">Chiều dài cạnh:</label>
+        <input type="text" name="canhhinhvuong">
+        <button type="button" onclick="HinhVuong()">Tính</button>
+    </form>
+    <div id="KQ1"></div>
+
+    <hr>
+    <h3>Hình Tròn</h3>
+    <form name="myForm">
+        <label for="bankinhR">Bán kính:</label>
+        <input type="text" name="bankinhR">
+        <button type="button" onclick="HinhTron()">Tính</button>
+    </form>
+    <div id="KQ2"></div>
+
+    <hr>
+    <h3>Tam giác</h3>
+    <form name="myForm">
+        <label for="canh_a">Cạnh 1:</label>
+        <input type="text" name="canh_a">
+        <label for="canh_b">Cạnh 2:</label>
+        <input type="text" name="canh_b">
+        <label for="canh_c">Cạnh 3:</label>
+        <input type="text" name="canh_c">
+        <button type="button" onclick="TamGiac()">Tính</button>
+    </form>
+    <div id="KQ3"></div>
+</body>
+
+</html>
